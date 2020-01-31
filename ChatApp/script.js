@@ -1,9 +1,27 @@
-// Video tutorial/codealong here: https://youtu.be/fCpw5i_2IYU
 
-$( '.friend-drawer--onhover' ).on( 'click',  function() {
+$( '.friend-drawer--onhover' ).on( 'click', () => {
   
   $( '.chat-bubble' ).hide('slow').show('slow');
-  
 });
 
-// Video tutorial/codealong here: https://youtu.be/fCpw5i_2IYU
+
+$('#sendMessage').on( 'click', () => {
+
+  const input = $('#messageInput');
+  const message = input.val();  
+  sendMessage("Cristiano", message);
+  input.val("")
+});
+
+
+function InsertMessageCard(isMyMessage, message) {
+  $('#messageContainer')
+  .append(`<div class="row no-gutters">
+            <div class="col-md-3 ${isMyMessage === true ? 'offset-md-9' : ''}">
+                <div class="chat-bubble chat-bubble--${isMyMessage === true? 'right' : 'left'}">
+                    ${message}
+                </div>
+            </div>
+          </div>`
+      )
+}

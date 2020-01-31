@@ -114,30 +114,15 @@
 						</span>
 					</div>
 				</div>
-				<div class="chat-panel">
-					<div class="row no-gutters">
-						<div class="col-md-3">
-							<div class="chat-bubble chat-bubble--left">
-								Hello dude!
-							</div>
-						</div>
-					</div>
-					<div class="row no-gutters">
-						<div class="col-md-3 offset-md-9">
-							<div class="chat-bubble chat-bubble--right">
-								Hello dude!
-							</div>
-						</div>
-					</div>
+				<div id="messageContainer" class="chat-panel">
 
 				</div>
 				<div class="row">
 					<div class="col-12">
 						<div class="chat-box-tray">
 							<i class="material-icons">sentiment_very_satisfied</i>
-							<input type="text" placeholder="Type your message here...">
-							<i class="material-icons">mic</i>
-							<i class="material-icons">send</i>
+							<input id="messageInput" type="text" placeholder="Escrasva sua mensagem">
+							<button id="sendMessage"><i class="material-icons">send</i></button>
 						</div>
 					</div>
 				</div>
@@ -147,8 +132,8 @@
 	</div>
 	<!-- partial -->
 	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
-	<script src="./node_modules/@microsoft/signalr/dist/browser/signalr.js"></script>
 	<script src="./node_modules/@microsoft/signalr/dist/browser/signalr.min.js"></script>
+	<script src="./node_modules/@microsoft/signalr/dist/browser/signalr.js"></script>
 	<script src="./script.js"></script>
 	<script src="./chat.js"></script>
 

@@ -73,6 +73,12 @@ input:focus {
   outline: none;
 }
 
+button{
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
 .friend-drawer {
   padding: 10px 15px;
   display: flex;
