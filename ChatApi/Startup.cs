@@ -35,8 +35,7 @@ namespace ChatApi
             }
 
             app.UseRouting();
-
-            //app.UseAuthorization();
+            
             app.UseCors("policyAll");
 
             app.UseEndpoints(endpoints =>

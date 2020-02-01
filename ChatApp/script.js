@@ -14,6 +14,12 @@ $('#sendMessage').on( 'click', () => {
 });
 
 
+$(document).ready(() => {
+  if(!userHasLoginInfo())
+  window.location.href = "./login/index.html";
+});
+
+
 function InsertMessageCard(isMyMessage, message) {
   $('#messageContainer')
   .append(`<div class="row no-gutters">
