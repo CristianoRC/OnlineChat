@@ -19,7 +19,7 @@ namespace ChatApi
                 action.AddPolicy("policyAll", builder =>
                     builder.AllowAnyMethod()
                         .AllowAnyHeader()
-                        .WithOrigins("*")
+                        .WithOrigins("http://127.0.0.1:5500")
                         .AllowCredentials()));
             
             services.AddSignalR();
