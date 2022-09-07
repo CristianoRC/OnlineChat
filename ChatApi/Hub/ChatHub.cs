@@ -6,7 +6,6 @@ namespace ChatApi.Hub
 {
     public class ChatHub : Microsoft.AspNetCore.SignalR.Hub
     {
-        //IDistributedCache
         public async Task SendMessage(string user, string message)
         {
             await Clients.Others.SendAsync("ReceiveMessage", user, message);
@@ -20,7 +19,6 @@ namespace ChatApi.Hub
 
         public override Task OnDisconnectedAsync(Exception exception)
         {
-            
             return base.OnDisconnectedAsync(exception);
         }
     }

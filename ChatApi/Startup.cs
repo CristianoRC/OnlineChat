@@ -1,11 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using ChatApi.Hub;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
@@ -19,10 +14,11 @@ namespace ChatApi
                 action.AddPolicy("policyAll", builder =>
                     builder.AllowAnyMethod()
                         .AllowAnyHeader()
-                        .WithOrigins("*")
+                        .WithOrigins("http://127.0.0.1:5500")
                         .AllowCredentials()));
             
-            services.AddSignalR();
+            services.AddSignalR()
+            .AddAzureSignalR("");
             services.AddRazorPages();
         }
 
@@ -40,6 +36,7 @@ namespace ChatApi
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapRazorPages();
                 endpoints.MapHub<ChatHub>("/hubs/chat");
             });
         }
