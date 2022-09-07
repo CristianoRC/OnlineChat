@@ -19,7 +19,7 @@ namespace ChatApi
                 action.AddPolicy("policyAll", builder =>
                     builder.AllowAnyMethod()
                         .AllowAnyHeader()
-                        .WithOrigins("http://127.0.0.1:5500")
+                        .WithOrigins("*")
                         .AllowCredentials()));
             
             services.AddSignalR();
@@ -40,7 +40,6 @@ namespace ChatApi
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
                 endpoints.MapHub<ChatHub>("/hubs/chat");
             });
         }
