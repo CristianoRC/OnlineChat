@@ -22,7 +22,7 @@ namespace ChatApi
                         .WithOrigins("http://localhost:8080")
                         .AllowCredentials()));
 
-            const string signalRConnectionString = "Endpoint=https://aulayoutube.service.signalr.net;AccessKey=5xc5Aa0E4zlbL5e7hqw3x/yT35vXuOvoRBzq77erAfE=;Version=1.0;";
+            const string signalRConnectionString = "";
             services.AddSignalR()
                 .AddAzureSignalR(signalRConnectionString);
         }
