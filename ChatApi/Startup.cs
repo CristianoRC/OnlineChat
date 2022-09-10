@@ -19,13 +19,13 @@ namespace ChatApi
                 action.AddPolicy("policyAll", builder =>
                     builder.AllowAnyMethod()
                         .AllowAnyHeader()
-                        .WithOrigins("http://127.0.0.1:5500")
+                        .WithOrigins("http://localhost:8080")
                         .AllowCredentials()));
-            
-            services.AddSignalR();
-            services.AddRazorPages();
-        }
 
+            const string signalRConnectionString = "Endpoint=https://aulayoutube.service.signalr.net;AccessKey=5xc5Aa0E4zlbL5e7hqw3x/yT35vXuOvoRBzq77erAfE=;Version=1.0;";
+            services.AddSignalR()
+                .AddAzureSignalR(signalRConnectionString);
+        }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
